@@ -12,8 +12,24 @@
 
     <script>
 
+        /*  Explicación:
+
+            No hay misterio, se declara como CONS variables que no van a
+            cambiar a lo largo del código. Siguiendo la lógica, no es
+            posible redefinir una variable CONS o declararla sin valor,
+            a diferencia de variables tipo var o let, que si pueden
+            redefinirse y declararse sin valor inicial.
+        
+        */
+
+        let a;
         const PI = 3.141592;
-        console.log(PI);
+        a = 1;
+        console.log(PI); 
+
+        //const sinDeclarar;    //No se puede
+        //PI = 3.1516;          //No se puede
+
 
     </script>
     
