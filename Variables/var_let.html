@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var_let</title>
+</head>
+
+<body>
+
+    <h1>Variables Var y Let</h1>
+
+    <script>
+
+        /*  Explicación:
+
+            Tal parece que para definir si una variable se usa de forma
+            global o local (De bloque), no importa donde la declares sino
+            cómo la declares:
+
+            var: Variable de ámbito global
+            let: Varriable de ámbito local (De bloque)
+        */
+
+        var hola = "Hola mundo (Con ámbito global) D:";
+        let holi = "Hola mundo (Con ámbito de bloque) :D";
+
+        console.log(hola);
+        console.log(holi);
+        console.log(window);
+
+        //--------------------------------------------------------------
+
+        /*  Explicación:
+
+            Lo que pasa a continuación, es que se declara una variable
+            tipo var por fuera de un bloque, y al redeclarar la misma 
+            dentro de dicho bloque, esta cambia de forma global. 
+            Básicamente lo que aquí ocurre es el llamado hoisting, donde
+            eleva la delcaración de una variable de tipo var por encima 
+            de cualquier bloque en que se encuentre, haciendola global 
+            a pesar de haber declarado de en un ámbito local (Dentro de 
+            un bloque).
+        */
+
+        var ejemploGlobal = "Dia";
+        console.log("Variable var antes del bloque: ", ejemploGlobal);
+
+        {
+            var ejemploGlobal = "Noche";
+            console.log("Variable var dentro del bloque: ", ejemploGlobal);
+        }
+
+        console.log("Variable var después del bloque: ", ejemploGlobal);
+
+        //--------------------------------------------------------------
+
+        /*  Explicación:
+
+            Aquí ocurre lo contrario a antes, al declararse de tipo let,
+            el código respeta si se ha definido de forma gloal o local.
+            Se puede ver que el valor de la variable de tipo let solo 
+            está cambiando dentro del bloque y no por fuera, como debería
+            ser.
+        */
+
+        let ejemploGlobal2 = "Frio";
+        console.log("Variable let antes del bloque: ", ejemploGlobal2);
+
+        {
+            let ejemploGlobal2 = "Calor";
+            console.log("Variable let dentro del bloque: ", ejemploGlobal2);
+        }
+
+        console.log("Variable let después del bloque: ", ejemploGlobal2);
+
+        /*  Conclusión:
+
+            Básicamente es una mala práctica el hacer uso de variables 
+            de tipo var, en cambio usa let, porque respeta el ámbito
+            en que se declara.
+        */
+
+    </script>
+    
+</body>
+</html> 
