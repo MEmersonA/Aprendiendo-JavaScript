@@ -12,16 +12,16 @@
 
     <script>
 
-console.log(sumaFuncion(1,1));
+        console.log(funcionDeclarada(1,1)); //Puede invocarse antes de su declaración
 
-        function sumaFuncion(a = 0, b = 0){
+        function funcionDeclarada(a = 0, b = 0){
 
             console.log(`Suma: ${a} + ${b} = ${a+b}`);
             return a+b;
 
         }
 
-        console.log(sumaFuncion(5,3));
+        console.log(funcionDeclarada(5,3));
 
         //funcionExpresada(); //No puede invocarse antes de su declaración
 
@@ -33,6 +33,19 @@ console.log(sumaFuncion(1,1));
 
         funcionExpresada();
         
+        /*  Conclusión:
+
+            Hay principalmente dos tipos de funciones en JavaScript, las declaradas
+            y las expresadas. La diferencia es que las declaradas, que parecen ser
+            las funciones clásicas de toda la vida, pueden invocarse antes o después
+            de su declaración, puesto que sufre del mismo efecto de hoisting que las
+            variables de tipo Var. Por otro lado las expresadas, son funciones
+            asignadas a variables (Parece que normalmente de tipo const), y solo pueden
+            invocarse después de su declaración. Al igual que con el asunto de Var y Let,
+            parece que la práctica más correcta es usar funciones expresadas,justamente
+            para evitar el efecto del hoisting.
+        */
+
     </script>
     
 </body>
