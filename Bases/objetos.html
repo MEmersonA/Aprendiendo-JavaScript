@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+
+    <h1>Objetos omaigad</h1>
+
+    <script>
+
+         /* Explicación:
+
+            Al parecer en JavaScript se pueden crear objetos sin necesidad de 
+            pertenecer a ninguna clase. Mismo concepto que en cualquier otro 
+            lenguaje; tiene atributos y métodos. Ojo con la nomenclatura.
+         
+         */
+
+        
+        const perro = {
+
+            nombre: "Jaimito",
+            edad: 15,
+            raza: "Salchica",
+            comidasFavorita: ["Atún", "Remolacha", "Pechuga", "Lentejas"],
+            patas: 4,
+            cola: true,
+
+            ladrar: function(){
+
+                console.log("Guau");
+
+            },
+
+            presentar: function(){
+
+                console.log(`Este perro se llama ${this.nombre}, tiene ${this.edad} años y es un ${this.raza}.`)
+
+            }
+
+        }
+
+        perro.ladrar();
+        
+        console.log(perro.nombre);
+        console.log(perro.edad);
+        console.log(perro.raza);
+
+        perro.presentar();
+
+    </script>
+    
+</body>
+</html>
