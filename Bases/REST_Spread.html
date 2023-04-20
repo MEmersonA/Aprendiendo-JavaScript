@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest y Spread</title>
+</head>
+<body>
+
+    <h1>Rest y Spread</h1>
+
+    <script>
+
+        function sumar(a, b, ...c){
+
+            let res = a + b;
+
+            c.forEach(function(n){
+
+                res += n
+
+            });
+
+            return res;
+
+        }
+
+        console.log(sumar(1,2));
+
+        console.log(sumar(1,2,3,4,5,6,7,8,9,10));
+
+        //
+
+        let array1 = [1,2,3,4,5];
+        let array2 = [6,7,8,9,0];
+
+        let array3 = [...array1, ...array2];
+
+        console.log(array3);
+        
+    </script>
+    
+</body>
+</html>
