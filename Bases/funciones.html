@@ -32,7 +32,41 @@
         }
 
         funcionExpresada();
-        
+
+        //ARROW FUNCTIONS
+
+        const duplicar = a => a*2;
+        const sumar = (a,b) => a+b;
+
+        console.log(duplicar(5));
+        console.log(sumar(10,10));
+
+
+        const arrowFunction = () =>{
+
+            console.log("Esto es");
+            console.log("un");
+            console.log("Arrow Function");
+
+        }
+
+        arrowFunction();
+
+        let array1 = [1,2,3,4,5,6,7,8,9,0];
+
+        array1.forEach((e,i) => console.log(`${e} => ${i}`));
+
+        const gato = {
+
+            nombre: "michi",
+            maullar ()  {
+                console.log(this);
+            }
+
+        }
+
+        gato.maullar();
+             
         /*  Conclusión:
 
             Hay principalmente dos tipos de funciones en JavaScript, las declaradas
@@ -44,6 +78,13 @@
             invocarse después de su declaración. Al igual que con el asunto de Var y Let,
             parece que la práctica más correcta es usar funciones expresadas,justamente
             para evitar el efecto del hoisting.
+
+            Las arrow function, son una nueva nomenclatura para la declaración de funciones.
+            básicamente la diferencia entre esta y las funciones expresadas, es que
+            acorta la declaración de la función, ya sea de una sola linea de código o de
+            varias. Pero la principal diferencia parece radicar en su uso en objetos,
+            donde, a diferencia de las funciones expresadas, hace pasar de un contexto local
+            (el del objeto), a un contexto global.
         */
 
     </script>
