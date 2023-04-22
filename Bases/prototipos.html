@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipos</title>
+</head>
+<body>
+    
+    <h1>Prototipos</h1>
+
+    <script>
+
+        function FiguraGeometrica(nombre, lados){
+
+            this.nombre = nombre;
+            this.lados = lados;
+
+            this.verLados = function () {
+
+                console.log(`Soy un ${nombre} y tengo ${lados} lados`);
+
+            }
+
+        }
+
+        const triangulo = new FiguraGeometrica("Triangulo", 3);
+        const cuadrado = new FiguraGeometrica("Cuadrado", 4);
+
+        console.log(triangulo);
+        console.log(cuadrado);
+
+        triangulo.verLados();
+        cuadrado.verLados();
+
+        function Animal(especie, sexo){
+
+            this.especie = especie;
+            this.sexo = sexo;
+
+        }
+
+        Animal.prototype.presentarIndividuo = function(){
+
+            console.log(`Soy un ${this.especie} y soy de sexo ${this.sexo}`);
+
+        }
+
+        Animal.prototype.sonar = function(){
+
+            console.log("Hago sonidos porque estoy vivo");
+
+        }
+
+        const conejo = new Animal("conejo", "masculino");
+        const nutria = new Animal("nutria", "femenino");
+
+        console.log(conejo);
+        console.log(nutria);
+
+
+        conejo.presentarIndividuo();
+        nutria.presentarIndividuo();
+
+        //Herencia
+
+        function Perro(especie, sexo, tamanio){
+
+            this.super = Animal;
+            this.super(especie, sexo);
+
+            this.tamanio = tamanio;
+
+        }
+
+        Perro.prototype = new Animal();
+        Perro.prototype.constructor = Perro;
+
+        Perro.prototype.sonar = function(){
+
+            console.log("Soy un perro y ladro");
+
+        }
+
+        Perro.prototype.ladrar = function(){
+
+            console.log("Guau guau");
+
+        }
+
+        const tibon = new Perro("Perro", "Macho", "Mediano");
+
+        console.log(tibon);
+
+        tibon.presentarIndividuo();
+        tibon.sonar();
+        tibon.ladrar();
+
+    </script>
+
+</body>
+</html>
