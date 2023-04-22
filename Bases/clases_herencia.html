@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases y herencia</title>
+</head>
+<body>
+
+    <h1>Clases y Herencia</h1>
+    
+    <script>
+
+        class Animal{
+
+            constructor(nombre, especie, sexo){
+
+                this.nombre = nombre;
+                this.especie = especie;
+                this.sexo = sexo;
+                this.edad = null;
+
+            }
+
+            presentarIndividuo(){
+
+                console.log(`Este es un ${this.especie}, se llama ${this.nombre} y es de sexo ${this.sexo}`);
+
+            }
+
+            sonar(){
+
+                console.log("Este hace sonidos porque es un ser vivo");
+
+            }
+
+            set setEdad(edad){
+
+                this.edad = edad;
+
+            }
+
+            get getEdad(){
+
+                return this.edad;
+
+            }
+
+        }
+
+        const perro = new Animal("Tibon","Perro","masculino");
+
+        console.log(perro);
+
+        perro.presentarIndividuo();
+        perro.sonar();
+
+        //Herencia
+
+        class Perro extends Animal{
+
+            constructor(nombre, especie, sexo, raza){
+
+                super(nombre, especie, sexo);
+                this.raza = raza;
+
+            }
+
+            sonar(){
+
+                console.log("Este es un perro y ladra");
+
+            }
+
+            ladrar(){
+
+                console.log("Guau guau");
+
+            }
+
+        }
+
+        const tobiPerro = new Perro("Tobi", "Perro", "Masculino", "French Puddle");
+
+        console.log(tobiPerro);
+
+        tobiPerro.presentarIndividuo();
+        tobiPerro.sonar();
+        tobiPerro.ladrar();
+        console.log(tobiPerro.raza);
+
+        console.log(tobiPerro.getEdad);
+        tobiPerro.setEdad = "13";
+        console.log(tobiPerro.getEdad);
+
+
+    </script>
+    
+</body>
+</html>
