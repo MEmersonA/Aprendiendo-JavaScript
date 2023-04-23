@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincroníaa en JavaScript</title>
+</head>
+<body>
+
+    <h1>Asincronía</h1>
+
+    <script>
+
+        let i = 0;
+
+        console.log("Inicio")
+
+        let tim = setTimeout(() => {
+            console.log("Se ejecuta luego de pasados 5s")
+        }, 5000);
+
+        let int1 = setInterval(() => {
+            console.log("Se ha ejecutado "+i+" veces")
+            i++
+        }, 10000);
+
+        let int2 = setInterval(() => {
+            console.log(new Date().toLocaleTimeString())
+        }, 5000);
+
+        setTimeout(() => {
+            clearTimeout(tim)
+            clearInterval(int1)
+            clearInterval(int2)
+
+            console.log("Se limpiaron lis TimeOut y los Interval")
+
+        }, 50000);
+
+    </script>
+    
+</body>
+</html>

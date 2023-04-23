@@ -1,4 +1,6 @@
 
+console.log("Ejercicio 1")
+
 const aleatorio = function(){
 
     let r = 0
@@ -14,3 +16,7 @@ const aleatorio = function(){
 }
 
 console.log(aleatorio())
+
+console.log("Ejercicio 2")
+
+
