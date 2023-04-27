@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakSets y WeakMaps</title>
+</head>
+<body>
+
+    <h1>WeakSets y WeakMaps</h1>
+
+    <script>
+
+        //WeakSets
+
+        const ws = new WeakSet()
+
+        let val1 = {valor1: 1}
+        let val2 = {valor2: 2}
+        let val3 = {valor3: 3}
+
+        ws.add(val1)
+        ws.add(val2)
+        ws.add(val3)
+
+        console.log(ws)
+
+        const impWs = setInterval(() => {
+            console.log(ws)
+        }, 1000);
+
+        setTimeout(() => {
+            val1 = null
+            val2 = null
+            val3 = null
+
+            setTimeout(function() {
+                console.log("Se acabó esta jodienda")
+                clearInterval(impWs)
+            }, 7000);
+
+        }, 5000);
+
+        //WeakMaps
+
+        const wm = new WeakMap();
+
+        let weak1 ={}
+        let weak2 ={}
+        let weak3 ={}
+        let weak4 ={}
+
+        wm.set(weak1,001)
+        wm.set(weak2,002)
+        wm.set(weak3,003)
+        wm.set(weak4,004)
+
+        console.log(wm)
+
+    </script>
+    
+</body>
+</html>
