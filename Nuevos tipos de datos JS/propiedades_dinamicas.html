@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Dinámicas de Objetos</title>
+</head>
+<body>
+
+    <h1>Propiedades Dinámicas de Objetos</h1>
+    
+    <script>
+
+        const objUsuarios  = {
+
+            [`id_${Math.round(Math.random()*100 + 5)}`]: "Random Val"
+
+        }
+
+        console.log(objUsuarios)
+
+        let usuarios = ["El pepe", "Ete Sech", "Harambe", "El chico gel", "Cuchiflíi", "El tapia"]
+
+        usuarios.forEach((usuarios, index) => objUsuarios[`id_${index}`]=usuarios)
+
+        console.log(objUsuarios)
+
+    </script>
+
+</body>
+</html>
