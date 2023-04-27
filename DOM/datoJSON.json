@@ -1,0 +1,14 @@
+
+{
+
+    "cadena": "El pepe",
+    "numero": 24,
+    "booleano": true,
+    "arreglo": ["Elpepe", "Ete sech", "Potatseo"],
+    "objeto": {
+        "nombre":"Emerson",
+        "apellido": "Mendoza"
+    },
+    "nulo": null
+
+}
